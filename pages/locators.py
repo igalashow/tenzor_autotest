@@ -16,3 +16,8 @@ class ResultPageLocators:
 class PicturesPageLocators:
     FIRST_CATEGORY = (By.XPATH, '//div[@class="PopularRequestList"]//a')
     CATEGORY_NAME = (By.CSS_SELECTOR, 'input.input__control')
+    FIRST_PICTURE_FROM_CATEGORY = (By.XPATH, "//div[@class='serp-controller__content']//a")
+    PICTURE_LINK = (By.CSS_SELECTOR, 'img.MMImage-Origin')
+    NEXT_BUTTON = (By.CSS_SELECTOR, 'div.CircleButton_type_next')
+    PREV_BUTTON = (By.CSS_SELECTOR, 'div.CircleButton_type_prev')
+
