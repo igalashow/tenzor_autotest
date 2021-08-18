@@ -14,7 +14,14 @@ class BasePage():
 
     def open(self, url):
         """ Открывает страницу в браузере """
-        self.browser.get(url)
+        try:
+            self.browser.get(url)
+        except WebDriverException as e:
+            raise AssertionError('WebDriverException', e)
+
+    def go_to_link(self, *locator):
+        """ Переходит по ссылке """
+        self.browser.find_element(locator[0], locator[1]).click()
 
     def is_element_present(self, how, what, timeout=10):
         """ Проверяет наличие элемента (загрузка за время timeout) """
