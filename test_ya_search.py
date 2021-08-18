@@ -64,4 +64,7 @@ class TestPictureYandex:
         current_link = pictures_page.should_be_correct_link()
         assert correct_url in current_link , f'Адрес страницы не соответствует {correct_url}!'
 
-
+        category_name = pictures_page.get_category_name()
+        pictures_page.go_to_first_category_link()
+        time.sleep(5)
+        assert category_name in pictures_page.should_be_correct_category_name(), 'Открыта неверная категория!'
