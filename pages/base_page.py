@@ -7,9 +7,10 @@ from selenium.webdriver.support import expected_conditions as EC
 class BasePage():
     """ Класс базовой страницы """
 
-    def __init__(self, browser):
+    def __init__(self, browser, timeout=5):
         """ Конструктор, вызывающий браузер """
         self.browser = browser
+        self.browser.implicitly_wait(timeout)
 
     def open(self, url):
         """ Открывает страницу в браузере """

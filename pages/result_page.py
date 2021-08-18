@@ -8,3 +8,22 @@ class ResultPage(BasePage):
     def should_be_result_table(self):
         return self.is_element_present(*ResultPageLocators.SEARCH_RESULT)
 
+    def should_be_in_top5(self, links, keywrd):
+        # Зачистка от рекламы яндекса
+        for index, link in enumerate(links):
+            if 'yabs.yandex.ru' in link:
+                links.remove(link)
+                links.insert(index, ' ')
+        # Проверка на тор5
+        for link in links[:5]:
+            if keywrd in link:
+                return True
+        return False
+
+    def get_results(self):
+        a_tags = self.browser.find_elements(*ResultPageLocators.LINKS)
+        links = []
+        for a in a_tags:
+            links.append(a.get_attribute('href'))
+        return links
+

@@ -8,3 +8,4 @@ class MainPageLocators:
 
 class ResultPageLocators:
     SEARCH_RESULT = (By.CSS_SELECTOR, 'ul#search-result')
+    LINKS = (By.CSS_SELECTOR, 'h2 > a')
