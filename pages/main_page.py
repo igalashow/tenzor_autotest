@@ -17,10 +17,10 @@ class MainPage(BasePage):
 
 
     def write_a_request(self, request):
-        self.browser.find_element(*MainPageLocators.SEARCH_FIELD).send_keys(request)
+        self.find_element(*MainPageLocators.SEARCH_FIELD).send_keys(request)
 
     def press_search_button(self):
-        self.browser.find_element(*MainPageLocators.SEARCH_BUTTON).click()
+        self.find_element(*MainPageLocators.SEARCH_BUTTON).click()
 
     def go_to_pictures_link(self):
         self.go_to_link(*MainPageLocators.PICTURES_LINK)

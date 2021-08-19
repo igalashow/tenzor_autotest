@@ -10,7 +10,7 @@ class TestYandexSearch():
 
     def test_should_be_working_search_field(self, browser):
         """ Проверяет наличие поля поиска и появление таблицы с подсказками """
-        url = 'https://mail.ru'
+        url = 'https://yandex.ru'
         page = MainPage(browser)
         page.open(url)
 
